@@ -1,2 +1,2 @@
 # tugboat-tests
-Repository to use for testing tugboat
+This repository is for use by Tugboat for demos and testing
