@@ -14,3 +14,6 @@ tugboat-init:
 
 tugboat-deploy:
 	util/deploy.sh
+
+tugboat-build:
+	drush downsync
