@@ -1109,3 +1109,7 @@ h3.comment-title a{
 #forum .name a{ 
   font-size: 16px;
 }
+
+.node-article .field-name-field-image img {
+  width: 100%;
+}
