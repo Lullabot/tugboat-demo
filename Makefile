@@ -17,3 +17,4 @@ tugboat-build:
 	sleep 3
 	cd docroot && drush vset theme_default business
 	cd docroot && drush cc all
+	curl -LI localhost
