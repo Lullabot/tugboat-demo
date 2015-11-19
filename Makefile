@@ -12,5 +12,9 @@ tugboat-init:
 	echo "}" >> docroot/sites/default/settings.php
 	echo "\$$_SERVER['REQUEST_URI'] = '/' . getenv('TUGBOAT_TAG') . '-' . getenv('TUGBOAT_TOKEN') . \$$_SERVER['REQUEST_URI'];" >> docroot/sites/default/settings.php
 
-tugboat-deploy:
+tugboat-build:
 	util/deploy.sh
+	sleep 3
+	cd docroot && drush vset theme_default business
+	cd docroot && drush cc all
+	curl -LI localhost
