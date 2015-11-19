@@ -15,3 +15,4 @@ tugboat-init:
 tugboat-build:
 	util/deploy.sh
 	cd docroot && drush vset theme_default business
+	cd docroot && drush cc all
