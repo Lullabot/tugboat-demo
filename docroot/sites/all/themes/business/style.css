@@ -189,11 +189,19 @@ em {
 }
 
 #wrap {
-  width: 920px;
-  padding: 0 40px 35px;
-  background: #FFF;
-  margin: 0 auto;
-  border-top: 3px solid #B81007;
+  width: 100%;
+  box-sizing: border-box;
+  background: #ffffff;
+  padding: 0 40px;
+}
+
+@media screen and (min-width: 920px) {
+  #wrap {
+    width: 920px;
+    padding: 0 40px 35px;
+    margin: 0 auto;
+    border-top: 3px solid #B81007;
+  }
 }
 #main {
   padding: 30px 0 0;
@@ -560,10 +568,17 @@ li.sfHover > a > .sf-sub-indicator {
 /* Front-page Slider 
 /*-------------------------------------------*/
 #slider {
-  position: relative;
-  width: 930px;
-  height: 350px;
-  margin-bottom: 40px;
+  display: none;
+}
+@media screen and (min-width: 930px) {
+  #slider {
+    display: block;
+    position: relative;
+    width: 930px;
+    height: 350px;
+    margin-bottom: 40px;
+    margin-left: -45px;
+  }
 }
 
 .main_view {
