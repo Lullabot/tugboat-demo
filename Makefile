@@ -14,4 +14,4 @@ tugboat-init:
 
 tugboat-build:
 	util/deploy.sh
-	cd docroot && drush vset default_theme business
+	cd docroot && drush vset theme_default business
