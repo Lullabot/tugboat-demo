@@ -256,11 +256,13 @@ h4 a {
 #logo{
   float: left;
   padding: 20px 15px 20px 0px;
+  margin-top: 50px;
 }
 
 #sitename {
   float: left;
   padding: 20px 0;
+  margin-top: 60px;
 }
 
 #sitename h2,
@@ -292,7 +294,7 @@ h4 a {
   position: absolute;
   height: 48px;
   top: 0px;
-  right: 0px;
+  left: 0px;
   font-size: 1em;
 }
 
