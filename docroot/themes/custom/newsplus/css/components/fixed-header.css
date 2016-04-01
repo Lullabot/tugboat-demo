@@ -1,0 +1,7 @@
+/*fixed main-menu*/
+.onscroll #header {
+  position: fixed;
+  z-index: 499;
+  top: 0;
+  width: 100%;
+}

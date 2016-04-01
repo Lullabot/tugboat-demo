@@ -1,0 +1,108 @@
+/*Social bookmarks & brands blocks*/
+ul.social-bookmarks,
+ul.brands {
+  list-style: none;
+  margin:0;
+  padding:0;
+}
+ul.social-bookmarks li,
+ul.brands li {
+  display: inline-block;
+   margin: 4px 10px 4px 0;
+ }
+ul.social-bookmarks li:first-child,
+ul.brands li:first-child {
+  margin-left: 0!important;
+}
+ul.social-bookmarks li a,
+ul.brands li a {
+  color: #909599;
+  display: block;
+  width: 45px;
+  height: 45px;
+  text-align: center;
+  border: 2px solid #c5c5c5;
+}
+ul.social-bookmarks li i,
+ul.brands li i {
+  width: 100%;
+  height: 100%;
+  font-size: 23px;
+  line-height: 42px;
+}
+ul.social-bookmarks li a:hover,
+ul.brands li a:hover {
+  text-decoration: none;
+  background-color: #282828;
+  color: #ffffff;
+  border: 2px solid #282828;
+}
+ul.social-bookmarks.large li,
+ul.brands.large li {
+  margin: 0px 20px 20px 0;
+}
+ul.social-bookmarks.large li a,
+ul.brands.large li a {
+  width: 90px;
+  height: 90px;
+}
+ul.social-bookmarks.large li a i,
+ul.brands.large li a i {
+  font-size: 46px;
+  line-height: 90px;
+   }
+.header-area ul.social-bookmarks li,
+.header-area ul.brands li {
+  margin: 0 10px 0 0;
+}
+.header-area ul.social-bookmarks li i,
+.header-area ul.brands li i {
+  line-height: 56px;
+}
+.header-area ul.social-bookmarks li a,
+.header-area ul.brands li a {
+  color: #ffffff;
+  display: block;
+  width: 50px;
+  height: 48px;
+  text-align: center;
+  border: none;
+}
+.header-top-area ul.social-bookmarks li a,
+.header-top-area ul.brands li a,
+.pre-header-area ul.social-bookmarks li a,
+.pre-header-area ul.brands li a {
+  color: #ffffff;
+   border: 2px solid transparent;
+ }
+.header-top-area ul.social-bookmarks li a:hover,
+.header-top-area ul.brands li a:hover,
+.pre-header-area ul.social-bookmarks li a:hover,
+.pre-header-area ul.brands li a:hover {
+  border: 2px solid #ffffff;
+  background-color: transparent;
+}
+/*User social boomarks*/
+ul.user-social-bookmarks {
+  list-style: none;
+  margin:0;
+  padding:0;
+}
+ul.user-social-bookmarks li {
+  display: inline-block;
+   margin: 15px 6px 15px 0;
+ }
+ul.user-social-bookmarks li a {
+  color: #909599;
+  display: block;
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  border: 2px solid #c5c5c5;
+}
+ul.user-social-bookmarks li i {
+  width: 100%;
+  height: 100%;
+  font-size: 20px;
+  line-height: 33px;
+}
