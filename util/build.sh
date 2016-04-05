@@ -80,4 +80,4 @@ unzip files.zip
 ## Download & import database
 curl -L "https://www.dropbox.com/s/cqfyu0nsk2vtfff/tugboat-demo.sql?dl=1&pv=1" > ~/tugboat-demo.sql
 mysql -h mysql -u tugboat -ptugboat -e 'drop database tugboat; create database tugboat;'
-cat ~/tugboat-demo.sql | mysql -h mysql -u tugboat-ptugboat tugboat
+cat ~/tugboat-demo.sql | mysql -h mysql -u tugboat -ptugboat tugboat
