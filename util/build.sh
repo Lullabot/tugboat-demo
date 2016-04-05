@@ -53,3 +53,19 @@ cat << 'EOF'
                 -///     :///////.  ://////:` -////////:  ://////:` ///-  ///-   .///`
                            ````       ````                  ````
 EOF
+
+## Upgrade Drush
+cd /usr/local/src/drush
+git pull
+git checkout 8.0.5
+composer install
+
+## Upgrade settings.php
+cd /var/lib/tugboat/docroot/sites/default
+cp default.settings.php settings.php
+
+cat << EOF >> settings.php
+if (file_exists(__DIR__ . '/settings.local.php')) {
+  include __DIR__ . '/settings.local.php';
+}
+EOF
