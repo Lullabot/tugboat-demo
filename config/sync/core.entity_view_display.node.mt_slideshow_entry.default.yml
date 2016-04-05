@@ -1,0 +1,32 @@
+uuid: 8918595f-4266-4919-bc00-ad3de901be70
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.mt_slideshow_entry.field_mt_slideshow
+    - field.field.node.mt_slideshow_entry.field_mt_slideshow_image
+    - field.field.node.mt_slideshow_entry.field_mt_slideshow_path
+    - node.type.mt_slideshow_entry
+  module:
+    - image
+    - user
+id: node.mt_slideshow_entry.default
+targetEntityType: node
+bundle: mt_slideshow_entry
+mode: default
+content:
+  field_mt_slideshow_image:
+    weight: 105
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_mt_slideshow: true
+  field_mt_slideshow_path: true

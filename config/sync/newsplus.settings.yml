@@ -1,0 +1,53 @@
+breadcrumb_display: 1
+breadcrumb_separator: /
+fixed_header: 1
+scrolltop_display: 1
+bootstrap_js_include: 1
+three_columns_grid_layout: grid_3_6_3
+color_scheme: blue
+reading_time: 1
+share_links: 1
+print_button: 1
+font_resize: 1
+post_progress: 1
+affix_admin_height: '64'
+affix_fixedHeader_height: '54'
+headings_font_family: hff-5
+paragraph_font_family: pff-5
+sitename_font_family: sff-5
+slogan_font_family: slff-5
+slideshow_effect: fade
+slideshow_effect_time: '10'
+internal_banner_effect: slide
+breaking_effect: fade
+breaking_effect_time: '5'
+responsive_multilevelmenu_state: 1
+google_map_latitude: '40.726576'
+google_map_longitude: '-74.046822'
+google_map_zoom: '13'
+google_map_canvas: map-canvas
+google_map_js: 0
+features:
+  node_user_picture: false
+  comment_user_picture: true
+  comment_user_verification: true
+  favicon: true
+logo:
+  use_default: false
+  path: 'public://tugboat_white_0.png'
+favicon:
+  use_default: true
+  path: ''
+breadcrumb: ''
+header: ''
+scrolltop: ''
+frontpage_content: ''
+frontpage_content_print: 0
+bootstrap_js: ''
+font_title: ''
+affix_side: 1
+content_background_color: white
+offset_fullwidth_content_label: ''
+offset_fullwidth_content: 1
+sitename_display: ''
+display_fixed_site_name: 1
