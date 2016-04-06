@@ -83,5 +83,5 @@ mysql -h mysql -u tugboat -ptugboat -e 'drop database tugboat; create database t
 cat ~/tugboat-demo.sql | mysql -h mysql -u tugboat -ptugboat tugboat
 
 ## Import config
-#cd /var/lib/tugboat/docroot
-#drush -y config-import
+cd /var/lib/tugboat/docroot
+drush -y config-import
