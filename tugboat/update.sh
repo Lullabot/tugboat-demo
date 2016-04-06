@@ -54,47 +54,6 @@ cat << 'EOF'
                            ````       ````                  ````
 EOF
 
-## Upgrade Drush
-cd /usr/local/src/drush
-git pull
-git checkout 8.0.5
-composer install
-
-## Upgrade settings.php
-cd /var/lib/tugboat/docroot/sites/default
-cp default.settings.php settings.php
-
-cat << EOF >> settings.php
-if (file_exists(__DIR__ . '/settings.local.php')) {
-  include __DIR__ . '/settings.local.php';
-}
-EOF
-
-cat << EOF > settings.local.php
-<?php
-
-\$databases = array (
-  'default' =>
-  array (
-    'default' =>
-    array (
-      'database' => 'tugboat',
-      'username' => 'tugboat',
-      'password' => 'tugboat',
-      'host' => 'mysql',
-      'port' => '',
-      'driver' => 'mysql',
-      'prefix' => '',
-    ),
-  ),
-);
-
-\$settings['hash_salt'] = 'oolaX6ee8uig7japhaisaech5igiu2re';
-\$config_directories = array(
-  CONFIG_SYNC_DIRECTORY => '/var/lib/tugboat/config/sync',
-);
-EOF
-
 ## Download & extract files
 apt-get update
 apt-get -y install unzip
