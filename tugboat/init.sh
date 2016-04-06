@@ -101,6 +101,7 @@ apt-get -y install unzip
 rm -rf files
 curl -L "https://www.dropbox.com/s/v5zydjej6mzsxs9/files3-5.zip?dl=1&pv=1" > files.zip
 unzip files.zip
+rm -rf __MACOSX
 rm files.zip
 
 ## Download & import database
