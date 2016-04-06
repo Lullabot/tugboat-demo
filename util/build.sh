@@ -70,6 +70,31 @@ if (file_exists(__DIR__ . '/settings.local.php')) {
 }
 EOF
 
+cat << EOF > settings.local.php
+<?php
+
+\$databases = array (
+  'default' =>
+  array (
+    'default' =>
+    array (
+      'database' => 'tugboat',
+      'username' => 'tugboat',
+      'password' => 'tugboat',
+      'host' => 'mysql',
+      'port' => '',
+      'driver' => 'mysql',
+      'prefix' => '',
+    ),
+  ),
+);
+
+\$settings['hash_salt'] = 'oolaX6ee8uig7japhaisaech5igiu2re';
+\$config_directories = array(
+  CONFIG_SYNC_DIRECTORY => '/var/lib/tugboat/config/sync',
+);
+EOF
+
 ## Download & extract files
 apt-get update
 apt-get -y install unzip
