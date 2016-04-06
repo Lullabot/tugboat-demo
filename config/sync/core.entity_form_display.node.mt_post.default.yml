@@ -1,0 +1,132 @@
+uuid: 157512f8-4299-4908-9900-d87577a3a25b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.mt_post.body
+    - field.field.node.mt_post.comment
+    - field.field.node.mt_post.field_image
+    - field.field.node.mt_post.field_mt_banner_image
+    - field.field.node.mt_post.field_mt_breaking
+    - field.field.node.mt_post.field_mt_post_categories
+    - field.field.node.mt_post.field_mt_slideshow
+    - field.field.node.mt_post.field_mt_slideshow_image
+    - field.field.node.mt_post.field_mt_subheader_body
+    - field.field.node.mt_post.field_tags
+    - image.style.thumbnail
+    - node.type.mt_post
+  module:
+    - comment
+    - image
+    - path
+    - text
+id: node.mt_post.default
+targetEntityType: node
+bundle: mt_post
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 4
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+  comment:
+    weight: 15
+    settings: {  }
+    third_party_settings: {  }
+    type: comment_default
+  created:
+    type: datetime_timestamp
+    weight: 11
+    settings: {  }
+    third_party_settings: {  }
+  field_image:
+    weight: 3
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+  field_mt_banner_image:
+    weight: 1
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+  field_mt_breaking:
+    weight: 7
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+  field_mt_post_categories:
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+  field_mt_slideshow:
+    weight: 9
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+  field_mt_slideshow_image:
+    weight: 8
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+  field_mt_subheader_body:
+    weight: 2
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea_with_summary
+  field_tags:
+    weight: 6
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete_tags
+  path:
+    type: path
+    weight: 14
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 12
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 13
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 10
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

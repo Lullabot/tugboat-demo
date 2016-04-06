@@ -1,0 +1,7 @@
+/* Google Map */
+.map-canvas {
+  height: 400px;
+}
+.map-canvas img {
+  max-width: inherit;
+}

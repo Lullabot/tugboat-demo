@@ -1,0 +1,21 @@
+uuid: c1fed66c-ca04-4158-9700-f7d9db7f2705
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.mt_google_maps
+    - field.field.block_content.mt_google_maps.body
+  module:
+    - text
+id: block_content.mt_google_maps.default
+targetEntityType: block_content
+bundle: mt_google_maps
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

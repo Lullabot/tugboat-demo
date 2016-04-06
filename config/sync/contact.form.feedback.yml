@@ -1,0 +1,10 @@
+uuid: 63607e7f-df43-4d6c-8d00-e3da7c7f1835
+langcode: en
+status: true
+dependencies: {  }
+id: feedback
+label: 'Contact us'
+recipients:
+  - dev+newsplusd8@morethanthemes.com
+reply: ''
+weight: 0

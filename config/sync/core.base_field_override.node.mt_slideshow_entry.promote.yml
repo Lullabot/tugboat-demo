@@ -1,0 +1,22 @@
+uuid: 667c551d-42f1-40de-8f07-7d0ce641e502
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.mt_slideshow_entry
+id: node.mt_slideshow_entry.promote
+field_name: promote
+entity_type: node
+bundle: mt_slideshow_entry
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
