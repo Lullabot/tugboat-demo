@@ -93,6 +93,9 @@ cat << EOF > settings.local.php
 \$config_directories = array(
   CONFIG_SYNC_DIRECTORY => '/var/lib/tugboat/config/sync',
 );
+
+\$GLOBALS['install_state']['profile_info']['distribution']['name'] = 'standard';
+\$GLOBALS['install_state']['parameters']['profile'] = 'standard';
 EOF
 
 ## Download & extract files
