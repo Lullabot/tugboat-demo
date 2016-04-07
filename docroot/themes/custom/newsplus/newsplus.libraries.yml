@@ -49,6 +49,7 @@ global-styling:
       css/components/view-news-in-images.css: {}
       css/components/view-most-popular.css: {}
       css/components/view-tags-cloud.css: {}
+      css/components/unicorns.css: {}
     theme:
       css/theme/print.css: { media: print }
 
