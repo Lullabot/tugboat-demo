@@ -104,6 +104,7 @@ apt-get -y install unzip
 rm -rf files
 curl -L "https://www.dropbox.com/s/v5zydjej6mzsxs9/files3-5.zip?dl=1&pv=1" > files.zip
 unzip files.zip
+chown -R www-data files
 rm -rf __MACOSX
 rm files.zip
 
@@ -116,3 +117,14 @@ rm ~/tugboat-demo.sql
 ## Import config
 cd /var/lib/tugboat/docroot
 drush -y config-import
+
+## Make sure the docroot structure matches the Tugboat config
+if [ "$TUGBOAT_URL" == "http://$TUGBOAT_DOMAIN/$TUGBOAT_TAG-$TUGBOAT_TOKEN" ] || [ "$TUGBOAT_URL" == "https://$TUGBOAT_DOMAIN/$TUGBOAT_TAG-$TUGBOAT_TOKEN" ]; then
+    rm /var/www/html
+    mkdir /var/www/html
+    ln -s /var/lib/tugboat/docroot /var/www/html/$TUGBOAT_TAG-$TUGBOAT_TOKEN
+    echo "RewriteBase /$TUGBOAT_TAG-$TUGBOAT_TOKEN" >> /var/lib/tugboat/docroot/.htaccess
+fi
+
+## Clear Cache
+drush -r /var/lib/tugboat/docroot cr
