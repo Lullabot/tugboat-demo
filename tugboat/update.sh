@@ -78,3 +78,6 @@ if [ "$TUGBOAT_URL" == "http://$TUGBOAT_DOMAIN/$TUGBOAT_TAG-$TUGBOAT_TOKEN" ] ||
     ln -sf /var/lib/tugboat/docroot /var/www/html/$TUGBOAT_TAG-$TUGBOAT_TOKEN
     echo "RewriteBase /$TUGBOAT_TAG-$TUGBOAT_TOKEN" >> /var/lib/tugboat/docroot/.htaccess
 fi
+
+## Clear Cache
+drush -r /var/lib/tugboat/docroot cr
