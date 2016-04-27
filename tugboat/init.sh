@@ -123,5 +123,5 @@ if [ "$TUGBOAT_URL" == "http://$TUGBOAT_DOMAIN/$TUGBOAT_TAG-$TUGBOAT_TOKEN" ] ||
     rm /var/www/html
     mkdir /var/www/html
     ln -s /var/lib/tugboat/docroot /var/www/html/$TUGBOAT_TAG-$TUGBOAT_TOKEN
-    echo "RewriteBase /$TUGBOAT_TAG-$TUGBOAT-TOKEN" >> /var/lib/tugboat/docroot/.htaccess
+    echo "RewriteBase /$TUGBOAT_TAG-$TUGBOAT_TOKEN" >> /var/lib/tugboat/docroot/.htaccess
 fi
