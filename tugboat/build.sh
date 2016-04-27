@@ -56,5 +56,5 @@ EOF
 
 ## Import config
 cd /var/lib/tugboat/docroot
-chmod -R 777 sites/default/files
+chown -R www-data sites/default/files
 drush -y config-import
