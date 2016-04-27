@@ -58,3 +58,9 @@ EOF
 cd /var/lib/tugboat/docroot
 chown -R www-data sites/default/files
 drush -y config-import
+
+## Make sure the docroot structure matches the Tugboat config
+if [ "$TUGBOAT_URL" == "http://$TUGBOAT_DOMAIN/$TUGBOAT_TAG-$TUGBOAT_TOKEN" ] || [ "$TUGBOAT_URL" == "https://$TUGBOAT_DOMAIN/$TUGBOAT_TAG-$TUGBOAT_TOKEN" ]; then
+    ln -s /var/lib/tugboat/docroot /var/www/html/$TUGBOAT_TAG-$TUGBOAT_TOKEN
+    echo "RewriteBase /$TUGBOAT_TAG-$TUGBOAT-TOKEN" >> /var/lib/tugboat/docroot/.htaccess
+fi
