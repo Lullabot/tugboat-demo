@@ -56,7 +56,7 @@ EOF
 
 ## Upgrade Drush
 cd /usr/local/src/drush
-git pull
+git fetch all 
 git checkout 8.0.5
 composer install
 
