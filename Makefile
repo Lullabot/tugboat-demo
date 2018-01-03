@@ -5,4 +5,4 @@ tugboat-update:
 	tugboat/update.sh
 
 tugboat-build:
-	tugboat/build.sh
+	/bin/false
