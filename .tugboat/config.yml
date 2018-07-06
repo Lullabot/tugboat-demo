@@ -5,8 +5,6 @@ services:
         depends: mysql
         commands:
             init:
-                - apt-get update
-                - apt-get install mysql-client
                 - ln -snf "${TUGBOAT_ROOT}/docroot" "${DOCROOT}"
                 - composer --no-ansi global require drush/drush:8.0.5
                 - ln -sf ~/.composer/vendor/bin/drush /usr/local/bin/drush
@@ -18,11 +16,6 @@ services:
                 - unzip /tmp/files.zip
                 - mv files "${DOCROOT}/sites/default/"
                 - rm /tmp/files.zip
-
-                - wget -O /tmp/database.sql "https://www.dropbox.com/s/9omeceyujt53s83/tugboat-demo3-5-2.sql?dl=1&pv=1"
-                - mysql -h mysql -u tugboat -ptugboat -e 'drop database tugboat; create database tugboat;'
-                - cat /tmp/database.sql | mysql -h mysql -u tugboat -ptugboat tugboat
-                - rm /tmp/database.sql
             build:
                 - chown -R www-data "${DOCROOT}/sites/default/files"
                 - drush -r "${DOCROOT}" config-import
@@ -31,4 +24,7 @@ services:
         image: tugboatqa/mysql:5
         commands:
             update:
-                - touch /test
+                - wget -O /tmp/database.sql "https://www.dropbox.com/s/9omeceyujt53s83/tugboat-demo3-5-2.sql?dl=1&pv=1"
+                - mysql -e 'drop database tugboat; create database tugboat;'
+                - cat /tmp/database.sql | mysql tugboat
+                - rm /tmp/database.sql
