@@ -16,6 +16,11 @@ services:
                 - unzip /tmp/files.zip
                 - mv files "${DOCROOT}/sites/default/"
                 - rm /tmp/files.zip
+
+                - wget -O /tmp/database.sql "https://www.dropbox.com/s/9omeceyujt53s83/tugboat-demo3-5-2.sql?dl=1&pv=1"
+                - mysql -h mysql -u tugboat -ptugboat -e 'drop database tugboat; create database tugboat;'
+                - cat /tmp/database.sql | mysql -h mysql -u tugboat -ptugboat tugboat
+                - rm /tmp/database.sql
             build:
                 - chown -R www-data "${DOCROOT}/sites/default/files"
                 - drush -r "${DOCROOT}" config-import
@@ -23,8 +28,5 @@ services:
     mysql:
         image: tugboatqa/mysql:5
         commands:
-            init:
-                - wget -O /tmp/database.sql "https://www.dropbox.com/s/9omeceyujt53s83/tugboat-demo3-5-2.sql?dl=1&pv=1"
-                - mysql -e 'drop database tugboat; create database tugboat;'
-                - cat /tmp/database.sql | mysql tugboat
-                - rm /tmp/database.sql
+            update:
+                - touch /test
