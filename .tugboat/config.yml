@@ -2,8 +2,7 @@ services:
     php:
         image: tugboatqa/php:7.2-apache
         default: true
-        depends:
-            - mysql
+        depends: mysql
         commands:
             init:
                 - ln -snf "${TUGBOAT_ROOT}/docroot" "${DOCROOT}"
@@ -24,7 +23,7 @@ services:
     mysql:
         image: tugboatqa/mysql:5
         commands:
-            update:
+            init:
                 - wget -O /tmp/database.sql "https://www.dropbox.com/s/9omeceyujt53s83/tugboat-demo3-5-2.sql?dl=1&pv=1"
                 - mysql -e 'drop database tugboat; create database tugboat;'
                 - cat /tmp/database.sql | mysql tugboat
