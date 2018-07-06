@@ -4,9 +4,22 @@ services:
         default: true
         depends: mysql
         commands:
-            init: .tugboat/init.sh
-            update: .tugboat/update.sh
-            build: .tugboat/build.sh
+            init:
+                - ln -snf "${TUGBOAT_ROOT}/docroot" "${DOCROOT}"
+                - composer --no-ansi global require drush/drush:8.0.5
+                - ln -sf ~/.composer/vendor/bin/drush /usr/local/bin/drush
+                - cp "${DOCROOT}/sites/default/default.settings.php" "${DOCROOT}/sites/default/settings.php"
+                - cp "${TUGBOAT_ROOT}/.tugboat/tugboat.settings.php" "${DOCROOT}/sites/default/settings.local.php"
+            update:
+                - rm -rf "${DOCROOT}/sites/default/files"
+                - wget -O /tmp/files.zip "https://www.dropbox.com/s/v5zydjej6mzsxs9/files3-5.zip?dl=1&pv=1"
+                - unzip /tmp/files.zip
+                - mv files "${DOCROOT}/sites/default/"
+                - rm /tmp/files.zip
+            build:
+                - chown -R www-data "${DOCROOT}/sites/default/files"
+                - drush -r "${DOCROOT}" config-import
+                - drush -r "${DOCROOT}" cr
     mysql:
         image: tugboatqa/mysql:5
         commands:
