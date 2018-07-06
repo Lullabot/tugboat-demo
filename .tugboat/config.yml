@@ -5,6 +5,7 @@ services:
         depends: mysql
         commands:
             init:
+                - apt-get install mysql-client
                 - ln -snf "${TUGBOAT_ROOT}/docroot" "${DOCROOT}"
                 - composer --no-ansi global require drush/drush:8.0.5
                 - ln -sf ~/.composer/vendor/bin/drush /usr/local/bin/drush
