@@ -1,0 +1,11 @@
+services:
+    php:
+        image: tugboatqa/php:7.2-apache
+        default: true
+        depends: mysql
+        commands:
+            init: .tugboat/init.sh
+            update: .tugboat/update.sh
+            build: .tugboat/build.sh
+    mysql:
+        image: tugboatqa/mysql:5
