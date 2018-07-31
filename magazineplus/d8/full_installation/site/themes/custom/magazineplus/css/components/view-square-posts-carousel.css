@@ -1,0 +1,75 @@
+/**
+ * @file
+ * Visual styles for Magazine+'s square posts carousel.
+ */
+.container-fluid .view-square-posts {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.container-fluid .field--mt-collapsible-block .view-square-posts {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+.view-square-posts .overlay-container:hover .overlay--fit {
+  bottom: 7px;
+  left: 7px;
+  right: 7px;
+  top: 7px;
+}
+.view-square-posts .overlay-container .views-field-field-mt-post-category a {
+  border-width: 1px;
+  border-color: #ffffff;
+  border-style: solid;
+}
+.view-square-posts .overlay-container:hover .views-field-field-mt-post-category a {
+  background-color: transparent;
+  color: #ffffff;
+}
+.view-square-posts .no-image {
+  padding: 20px;
+}
+.view-square-posts .no-image h5 {
+  margin-top: 0;
+}
+.view-square-posts .no-image .views-field-field-mt-post-category a {
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+/*owl arrows*/
+.view-square-posts .owl-carousel .owl-nav {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  width: 100px;
+  margin-top: 0;
+  opacity: 0;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.view-square-posts .owl-carousel:hover .owl-nav {
+  opacity: 1;
+}
+.view-square-posts .owl-carousel .owl-nav:before,
+.view-square-posts .owl-carousel .owl-nav:after {
+  content: "";
+  background-color: transparent;
+  width: 0;
+  height: 0;
+}
+.view-square-posts .owl-carousel .owl-nav div {
+  position: absolute;
+  border-color: rgba(255, 255, 255, 0.5);
+}
+.view-square-posts .owl-carousel .owl-nav div:after {
+  color: #ffffff;
+}
+.view-square-posts .owl-carousel .owl-nav .owl-prev {
+  left: 15px;
+}
+.view-square-posts .owl-carousel .owl-nav .owl-next {
+  left: 64px;
+}

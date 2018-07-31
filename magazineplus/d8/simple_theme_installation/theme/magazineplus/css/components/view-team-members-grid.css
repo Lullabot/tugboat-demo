@@ -1,0 +1,18 @@
+/**
+ * @file
+ * Visual styles for Magazine+'s team members grid views.
+ */
+.view-team-members-grid .views-row {
+  margin-bottom: 30px;
+}
+.view-team-members-grid .views-field-title h5 {
+  font-size: 18px;
+}
+.view-team-members-grid .overlay-inner {
+  margin-top: -50px;
+}
+.view-team-members-grid .icons-list a:hover {
+  -ms-transform: scale(1);
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}

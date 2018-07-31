@@ -1,0 +1,524 @@
+/**
+ * @file
+ * Purple color styling for Magazine+.
+ *
+ * Base color: #4f2d76
+ * Dark color: #361f51
+ * RGB Base color: 79, 45, 118
+ * RGB Dark color: 54, 31, 81
+ */
+/* base: elements */
+a {
+  color: #4f2d76;
+}
+a:hover,
+a:focus {
+  color: #361f51;
+}
+a.link--dark,
+.link--dark a {
+  color: #361f51;
+}
+a.link--dark:hover,
+.link--dark a:hover,
+a.link--dark:focus,
+.link--dark a:focus {
+  color: #4f2d76;
+}
+a.link--bordered,
+.link--bordered a {
+  border-color: #4f2d76;
+}
+.text--dark {
+  color: #361f51;
+}
+.text--colored {
+  color: #4f2d76;
+}
+
+/* base: layout */
+.region--dark-background {
+  background-color: #361f51;
+}
+.region--colored-background {
+  background-color: #4f2d76;
+}
+.region--colored-background + .region--separator-incline-diagonal:before {
+  background: linear-gradient(to bottom right, #4f2d76 49.5%, transparent 50%);
+}
+.region--dark-background + .region--separator-incline-diagonal:before {
+  background: linear-gradient(to bottom right, #361f51 49.5%, transparent 50%);
+}
+.region--colored-background + .region--separator-decline-diagonal:before {
+  background: linear-gradient(to bottom left, #4f2d76 49.5%, transparent 50%);
+}
+.region--dark-background + .region--separator-decline-diagonal:before {
+  background: linear-gradient(to bottom left, #361f51 49.5%, transparent 50%);
+}
+.page-container-border-enabled .page-container {
+  border-color: #4f2d76;
+}
+
+/* components: accordion */
+.panel-title a {
+  color: #361f51;
+}
+.panel-title a:hover,
+.panel-title a:focus {
+  color: #361f51;
+}
+.panel-heading--trigger-icon .panel-title a:after {
+  background-color: #4f2d76;
+}
+.panel-heading--trigger-icon .panel-title a.collapsed:after {
+  background-color: #361f51;
+}
+.panel-heading--trigger-icon .panel-title a:hover:after {
+  background-color: #4f2d76;
+}
+.region--light-typography.region--dark-background .panel-title a:hover,
+.region--light-typography.region--dark-background .panel-title a:focus {
+  color: #361f51;
+}
+.panel-group.panel-group--style-2 .panel .panel-title a {
+  background-color: #4f2d76;
+}
+.panel-group.panel-group--style-2 .panel-title a.collapsed {
+  background-color: #361f51;
+}
+.panel-group.panel-group--style-2 .panel-title a:hover {
+  background-color: #4f2d76;
+}
+.region--light-typography .panel-group.panel-group--style-2 .panel-heading--trigger-icon .panel-title a,
+.region--light-typography .panel-group.panel-group--style-2 .panel-heading--trigger-icon .panel-title a:hover {
+  color: #361f51;
+}
+
+/* components: buttons */
+a.button,
+.button > a,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  background-color: #361f51;
+}
+a.button:hover,
+a.button:focus,
+.button > a:hover,
+.button > a:focus,
+input[type="submit"]:hover,
+input[type="submit"]:focus,
+input[type="reset"]:hover,
+input[type="reset"]:focus,
+input[type="button"]:hover,
+input[type="button"]:focus {
+  background-color: #4f2d76;
+}
+a.button.button--hover-style-2:before,
+.button.button--hover-style-2 > a:before {
+  background-color: #4f2d76;
+  border-color: #4f2d76;
+}
+.region--light-typography a.button:hover,
+.region--light-typography .button > a:hover,
+.region--light-typography input[type="submit"]:hover,
+.region--light-typography input[type="reset"]:hover,
+.region--light-typography input[type="button"]:hover,
+.region--light-typography a.button:focus,
+.region--light-typography .button > a:focus,
+.region--light-typography input[type="submit"]:focus,
+.region--light-typography input[type="reset"]:focus,
+.region--light-typography input[type="button"]:focus {
+  border-color: #4f2d76;
+  background-color: #4f2d76;
+}
+.region--light-typography.region--colored-background a.button,
+.region--light-typography.region--colored-background .button > a,
+.region--light-typography.region--colored-background input[type="submit"],
+.region--light-typography.region--colored-background input[type="reset"],
+.region--light-typography.region--colored-background input[type="button"] {
+  border-color: #ffffff;
+  background-color: transparent;
+}
+.region--light-typography.region--colored-background a.button:hover,
+.region--light-typography.region--colored-background .button > a:hover,
+.region--light-typography.region--colored-background input[type="submit"]:hover,
+.region--light-typography.region--colored-background input[type="reset"]:hover,
+.region--light-typography.region--colored-background input[type="button"]:hover,
+.region--light-typography.region--colored-background a.button:focus,
+.region--light-typography.region--colored-background .button > a:focus,
+.region--light-typography.region--colored-background input[type="submit"]:focus,
+.region--light-typography.region--colored-background input[type="reset"]:focus,
+.region--light-typography.region--colored-background input[type="button"]:focus {
+  border-color: #361f51;
+  background-color: #361f51;
+}
+.region--colored-background a.button.button--hover-style-2:hover,
+.region--dark-background a.button.button--hover-style-2:hover,
+.region--black-background a.button.button--hover-style-2:hover,
+.region--colored-background .button.button--hover-style-2 > a:hover,
+.region--dark-background .button.button--hover-style-2 > a:hover,
+.region--black-background .button.button--hover-style-2 > a:hover {
+  border-color: #4f2d76;
+}
+.region--light-typography.region--colored-background a.button.button--hover-style-2:before,
+.region--light-typography.region--colored-background .button.button--hover-style-2 > a:before {
+  background-color: #361f51;
+  border-color: #361f51;
+}
+
+/* components: comment */
+.node .comment ul.links li a {
+  color: #4f2d76;
+}
+.node .comment ul.links li a:hover {
+  color: #361f51;
+}
+
+/* components: contact info */
+.contact-info .icon {
+  background-color: #361f51;
+}
+
+/* components: dropdowns */
+.region--dark-background .dropdown-menu {
+  background-color: #361f51;
+}
+.region--colored-background .dropdown-menu {
+  background-color: #4f2d76;
+}
+
+/* components: field taxonomy terms */
+.field--entity-reference-target-type-taxonomy-term .field__item a,
+.field--entity-reference-target-type-taxonomy-term.field__item a {
+  color: #361f51;
+}
+.field--entity-reference-target-type-taxonomy-term .field__item a:hover,
+.field--entity-reference-target-type-taxonomy-term.field__item a:hover {
+  color: #4f2d76;
+}
+
+/* components: fixed header */
+.onscroll .header.js-fixed.region--colored-background {
+  background-color: rgba(79, 45, 118, 0.95);
+}
+.onscroll .header.js-fixed.region--dark-background {
+  background-color: rgba(54, 31, 81, 0.95);
+}
+
+/* components: flexslider nodes slideshow */
+.nodes-slideshow-navigation .slides > li a .title-text {
+  color: #361f51;
+  border-bottom-color: #4f2d76;
+}
+.nodes-slideshow-navigation .slides > li.is-active a .title-text,
+.nodes-slideshow-navigation .slides > li a .title-text:hover {
+  color: #4f2d76;
+}
+
+/*forms*/
+input.form-text:hover,
+input.form-tel:hover,
+input.form-email:hover,
+input.form-url:hover,
+input.form-search:hover,
+input.form-file:hover,
+input.form-number:hover,
+input.form-color:hover,
+textarea:hover,
+select:hover,
+input.form-text:focus,
+input.form-tel:focus,
+input.form-email:focus,
+input.form-url:focus,
+input.form-search:focus,
+input.form-file:focus,
+input.form-number:focus,
+input.form-color:focus,
+textarea:focus,
+select:focus {
+  border-bottom-color: #361f51;
+}
+.form-actions--style-2 .form-submit:hover,
+.form-actions--style-2 .form-submit:focus {
+  color: #4f2d76;
+}
+
+/* components: image overlay */
+.overlay--colored {
+  background-color: rgba(54, 31, 81, 0.8);
+}
+.overlay--visible.overlay--colored {
+  background-color: rgba(54, 31, 81, 0.65);
+}
+.overlay-container:hover .overlay--visible.overlay--colored {
+  background-color: rgba(54, 31, 81, 0.8);
+}
+
+/* components: language switcher */
+.region--dark-typography .block-language ul li .is-active {
+  color: #361f51;
+}
+
+/* components: menu */
+.region--dark-typography ul.menu li a:hover,
+.region--dark-typography ul.menu li a.is-active,
+.region--dark-typography ul.menu li.active-trail > a {
+  color: #361f51;
+}
+.region--dark-typography .sf-menu li.sfHover > a {
+  color: #361f51;
+}
+.region--colored-background .sf-menu.menu ul {
+  background-color: #4f2d76;
+}
+.region--dark-background .sf-menu.menu ul {
+  background-color: #361f51;
+}
+.menu.cta-active > li:last-child > a {
+  background-color: #361f51;
+}
+.region--dark-background .menu.cta-active > li:last-child > a:hover {
+  border-color: #4f2d76;
+}
+.menu.cta-active > li:last-child > a:hover {
+  background-color: #4f2d76;
+}
+
+/* components: mini pager */
+li.pager__item a:hover,
+li.pager__item a:focus {
+  color: #361f51;
+  border-color: #361f51;
+}
+
+/* components: node links */
+.node ul.links li a {
+  background-color: #361f51;
+}
+.node ul.links li a:hover,
+.node ul.links li a:focus {
+  background-color: #4f2d76;
+}
+
+/* components: node post */
+.node--type-mt-post .node__user-info .username {
+  color: #361f51;
+}
+.node--type-mt-post .node__user-info .username:hover {
+  color: #4f2d76;
+}
+
+/* components: node product */
+.node--type-mt-product .field--name-field-mt-buy-link a {
+  background-color: #361f51;
+}
+.node--type-mt-product .field--name-field-mt-buy-link a:hover {
+  background-color: #4f2d76;
+}
+.region--light-typography .field--name-field-mt-buy-link a:hover {
+  border-color: #4f2d76;
+}
+.region--light-typography.region--colored-background .field--name-field-mt-buy-link a:hover {
+  background-color: #361f51;
+  border-color: #361f51;
+}
+.node--type-mt-product .field--entity-reference-target-type-taxonomy-term .field__item a,
+.node--type-mt-product .field--entity-reference-target-type-taxonomy-term.field__item a {
+  color: #4f2d76;
+}
+.node--type-mt-product .field--entity-reference-target-type-taxonomy-term .field__item a:hover,
+.node--type-mt-product .field--entity-reference-target-type-taxonomy-term.field__item a:hover {
+  color: #361f51;
+}
+
+/* components: node testimonials */
+.node--type-mt-testimonial .field--name-body p:first-child:after {
+  color: rgba(79, 45, 118, 0.5);
+}
+
+/* components: owl carousel global */
+.owl-carousel .owl-nav div:hover {
+  background-color: #361f51;
+  border-color: #361f51;
+}
+.owl-carousel .owl-dots span {
+  border-color: #4f2d76;
+}
+.owl-carousel .owl-dots.active span {
+  border-color: #361f51;
+}
+.owl-carousel .owl-dots:hover span {
+  background-color: #4f2d76;
+  border-color: #4f2d76;
+}
+.region--dark-background .owl-carousel .owl-nav:after {
+  background-color: #361f51;
+}
+.region--colored-background .owl-carousel .owl-nav:after {
+  background-color: #4f2d76;
+}
+
+/* components: pager */
+li.pager__item a:hover,
+li.pager__item a:focus,
+li.pager__item.is-active a {
+  color: #361f51;
+  border-color: #361f51;
+}
+
+/* components: pills */
+.nav-pills > li > a {
+  background-color: #361f51;
+}
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:focus,
+.nav-pills > li.active > a:hover,
+.nav-pills > li > a:focus {
+  color: #361f51;
+  border-color: #4f2d76;
+}
+.nav-pills > li > a:hover {
+  background-color: #4f2d76;
+}
+.region--light-typography .nav-pills > li.active > a,
+.region--light-typography .nav-pills > li.active > a:focus,
+.region--light-typography .nav-pills > li.active > a:hover,
+.region--light-typography .nav-pills > li > a:hover,
+.region--light-typography .nav-pills > li > a:focus {
+  border-color: #4f2d76;
+  background-color: #4f2d76;
+}
+.region--light-typography.region--colored-background .nav-pills > li.active > a,
+.region--light-typography.region--colored-background .nav-pills > li.active > a:focus,
+.region--light-typography.region--colored-background .nav-pills > li.active > a:hover,
+.region--light-typography.region--colored-background .nav-pills > li > a:hover,
+.region--light-typography.region--colored-background .nav-pills > li > a:focus {
+  border-color: #361f51;
+  background-color: #361f51;
+}
+
+/* components: post progress */
+.post-progress__bar {
+  background-color: #4f2d76;
+}
+
+/* components: progress bars */
+.progress-bar-default {
+  background-color: #361f51;
+}
+
+/* components: share links */
+.share-links ul li a {
+  color: #361f51;
+}
+.share-links ul li a:hover {
+  background-color: #361f51;
+}
+.js-share-links-fixed .share-links ul li a {
+  background-color: #361f51;
+}
+.js-share-links-fixed .share-links ul li a:hover {
+  color: #361f51;
+}
+
+/* components: slideout */
+.slideout-toggle {
+  background-color: #4f2d76;
+}
+.tp-caption--transparent-background.region--dark-typography .tp-caption__title a {
+  color: #4f2d76;
+}
+.tp-caption--transparent-background.region--dark-typography .tp-caption__title a:hover {
+  color: #361f51;
+}
+
+/* components: slider revolution global */
+.tp-tabs {
+  background-color: rgba(54, 31, 81, 0.93) !important;
+}
+.tp-tabs .tp-tab.selected,
+.tp-tabs .tp-tab:hover {
+  background-color: #361f51;
+}
+
+/* components: tables */
+.region--gray-background table tr th {
+  background-color: #361f51;
+}
+
+/* components: tabs */
+.nav-tabs > li > a:hover {
+  background-color: #4f2d76;
+  border-color: #4f2d76;
+}
+.nav-tabs > li > a:focus,
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:focus,
+.nav-tabs > li.active > a:hover {
+  background-color: #4f2d76;
+  border-color: #4f2d76;
+}
+.nav-tabs.nav-tabs--vertical > li > a:hover,
+.nav-tabs.nav-tabs--vertical > li.active > a {
+  border-bottom-color: #4f2d76;
+}
+.region--colored-background .nav-tabs > li > a:focus,
+.region--colored-background .nav-tabs > li > a:hover,
+.region--colored-background .nav-tabs > li.active > a,
+.region--colored-background .nav-tabs > li.active > a:focus,
+.region--colored-background .nav-tabs > li.active > a:hover {
+  background-color: #361f51;
+  border-color: #361f51;
+}
+.region--colored-background .nav-tabs.nav-tabs--vertical > li > a:hover,
+.region--colored-background .nav-tabs.nav-tabs--vertical > li.active > a {
+  border-bottom-color: #361f51;
+}
+
+/* components: to top */
+.to-top {
+  background-color: #361f51;
+}
+
+/* components: view popular taxonomy */
+.region--dark-typography .view-mt-popular-tags .views-row a:hover {
+  color: #4f2d76;
+}
+
+/* components: view posts slider */
+.view-posts-slider .views-field-field-mt-post-category a {
+  background-color: #361f51;
+}
+.view-posts-slider .views-field-field-mt-post-category a:hover {
+  background-color: #4f2d76;
+}
+
+/* components: view products grid */
+.view-products-grid .views-field-title h5 a {
+  color: #361f51;
+}
+.view-products-grid .views-field-title h5 a:hover {
+  color: #4f2d76;
+}
+
+/* components: view testimonials list */
+.view-testimonials-list .views-field-body p:first-child::before {
+  color: rgba(79, 45, 118, 0.5);
+}
+
+/* components: views */
+.view > .more-link a {
+  background-color: #361f51;
+}
+.view > .more-link a:hover {
+  background-color: #4f2d76;
+}
+.region--light-typography .view > .more-link a:hover {
+  border-color: #4f2d76;
+  background-color: #4f2d76;
+}
+.region--light-typography.region--colored-background .view > .more-link a:hover {
+  border-color: #361f51;
+  background-color: #361f51;
+}

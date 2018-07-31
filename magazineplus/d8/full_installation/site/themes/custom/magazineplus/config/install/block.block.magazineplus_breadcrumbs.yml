@@ -1,0 +1,22 @@
+uuid: 90a1e7d8-bf47-45a0-841e-2299c73b1107
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - magazineplus
+_core:
+  default_config_hash: lw0w0uLBSowYrQ0BnNUBW5ahq0VYVAhZWSIxolujjic
+id: magazineplus_breadcrumbs
+theme: magazineplus
+region: highlighted_top
+weight: -6
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility: {  }

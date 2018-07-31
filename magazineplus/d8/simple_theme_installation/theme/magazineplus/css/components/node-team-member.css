@@ -1,0 +1,41 @@
+/**
+ * @file
+ * Visual styles for Magazine+'s team member content type.
+ */
+.node--view-mode-teaser.node--type-mt-team-member .node__title {
+  display: inline-block;
+  margin-top: 19px;
+  margin-bottom: 5px;
+}
+.node--type-mt-team-member header .icons-list {
+  display: inline-block;
+  float: right;
+  padding-top: 15px;
+}
+.node--type-mt-team-member ul.icons-list li a:hover {
+  -ms-transform: scale(1);
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+.node--type-mt-team-member header .icons-list li i {
+  font-size: 14px;
+}
+.node--type-mt-team-member .field--name-field-mt-subtitle {
+  font-size: 15px;
+  text-transform: none;
+  margin-top: 20px;
+  padding-bottom: 30px;
+  display: inline-block;
+}
+.node--view-mode-teaser.node--type-mt-team-member .field--name-field-mt-subtitle {
+  margin-top: 0;
+  display: block;
+  clear: both;
+}
+.node--type-mt-team-member .field--name-body {
+  clear: both;
+}
+.node--type-mt-team-member .photo-container {
+  position: relative;
+  margin: 0 0 20px 0;
+}

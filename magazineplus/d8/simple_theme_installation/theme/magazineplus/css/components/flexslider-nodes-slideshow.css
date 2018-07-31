@@ -1,0 +1,89 @@
+/**
+ * @file
+ * Visual styles for Magazine+'s nodes slider.
+ */
+.field--mt-nodes-slideshow-block {
+  padding-top: 60px;
+}
+
+/*nodes slideshow*/
+.nodes-slideshow .slides > li:not(.flex-active-slide) a.button {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+/*nodes slideshow navigation*/
+.nodes-slideshow-navigation .slides {
+  width: 100% !important;
+}
+.nodes-slideshow-navigation .slides > li {
+  cursor: pointer;
+  position: relative;
+  float: none !important;
+}
+.nodes-slideshow-navigation .slides > li a {
+  padding-bottom: 30px;
+  text-decoration: none;
+  display: block;
+}
+.nodes-slideshow-navigation .slides > li a .title-order {
+  color: #9c9c9c;
+  font-size: 18px;
+  position: absolute;
+  left: 0;
+  top: -4px;
+}
+.nodes-slideshow-navigation .slides > li a .title-text {
+  display: inline-block;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  font-size: 15px;
+  margin-left: 30px;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+}
+.nodes-slideshow-navigation .slides > li a:hover .title-text {
+  border-bottom-color: transparent;
+}
+.region--light-typography .nodes-slideshow-navigation .slides > li a .title-text {
+  color: #ffffff;
+  border-bottom-color: #ffffff;
+}
+.region--light-typography .nodes-slideshow-navigation .slides > li a:hover .title-text {
+  color: #ffffff;
+  border-bottom-color: transparent;
+}
+.nodes-slideshow-navigation .slides > li.is-active {
+  cursor: default;
+}
+.nodes-slideshow-navigation .slides > li.is-active a .title-text {
+  border-bottom-color: transparent;
+  padding-left: 10px;
+}
+.region--light-typography .nodes-slideshow-navigation .slides > li.is-active a .title-text {
+  color: #ffffff;
+}
+.nodes-slideshow-navigation .slides > li.is-active a:before {
+  left: 0;
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+@media (max-width: 767px) {
+  .nodes-slideshow-navigation {
+    margin-bottom: 30px;
+  }
+}
+
+/*nodes slideshow @colored regions*/
+.region--light-typography .nodes-slideshow-navigation .slides > li.is-active a {
+  color: #ffffff;
+}
+.region--light-typography .nodes-slideshow-navigation .slides > li a:before {
+  color: #ffffff;
+}
+.region--light-typography .nodes-slideshow-navigation .slides > li {
+  border-bottom-color: rgba(255, 255, 255, 0.15);
+}

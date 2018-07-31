@@ -1,0 +1,110 @@
+/**
+ * @file
+ * Visual styles for Magazine+'s node content type.
+ */
+/* post header */
+.node--type-mt-post .node__title {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+.node--type-mt-post .node__user-info {
+  font-size: 14px;
+  color: #505050;
+  font-style: italic;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+.node--type-mt-post .node__side .node__user-info {
+  margin-bottom: 45px;
+}
+.node--type-mt-post .node__user-info .username {
+  font-style: normal;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+.node--type-mt-post .node__meta {
+  padding-top: 5px;
+  margin-bottom: 20px;
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: #eeeeee;
+  display: block;
+}
+.node--type-mt-post .node__meta .field--entity-reference-target-type-taxonomy-term.field__item {
+  margin: 0;
+}
+.node--type-mt-post .node__meta .field--entity-reference-target-type-taxonomy-term.field__item a:before {
+  content: "";
+}
+.node--type-mt-post .node-info-item {
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 12px;
+  padding: 0 10px;
+  position: relative;
+}
+.node--type-mt-post .node-info-item:first-child {
+  padding-left: 0;
+}
+.node--type-mt-post .node-info-item:last-child {
+  padding-right: 0;
+}
+.node--type-mt-post .node-info-item:before {
+  content: "";
+  width: 2px;
+  height: 2px;
+  background-color: #9c9c9c;
+  right: -1px;
+  position: absolute;
+  left: auto;
+  top: 50%;
+  margin-top: -1px;
+}
+.node--type-mt-post .node-info-item:last-child:before {
+  background-color: transparent;
+  width: 0;
+  height: 0;
+}
+
+/* post layout */
+.node--type-mt-post .node__side {
+  float: left;
+  width: 100px;
+  padding-right: 30px;
+  min-height: 1px;
+}
+.node--type-mt-post .node__side + .node__main-content {
+  overflow: hidden;
+}
+@media (max-width: 480px) {
+  .node--type-mt-post .node__side {
+    margin-top: 10px;
+    width: 75px;
+    padding: 0 15px 0 0;
+  }
+}
+
+/* post teaser */
+.node--type-mt-post.node--view-mode-teaser .images-container {
+  margin-bottom: 30px;
+}
+.node--type-mt-post.node--view-mode-teaser .node__header .user-picture {
+  display: inline-block;
+}
+.node--type-mt-post.node--view-mode-teaser .node__header .profile {
+  margin-right: 20px;
+}
+.node--type-mt-post.node--view-mode-teaser .node__header .user-picture img {
+  max-width: 40px;
+}
+.node--type-mt-post.node--view-mode-teaser .node__header .node__user-info {
+  margin-bottom: 0px;
+}
+.node--type-mt-post.node--view-mode-teaser .node__user-name {
+  font-size: 12px;
+  margin: 0 0 10px;
+  display: inline-block;
+}
+.node--type-mt-post.node--view-mode-teaser .field--name-body {
+  margin-bottom: 10px;
+}

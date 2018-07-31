@@ -1,0 +1,52 @@
+{#
+/**
+ * @file
+ * Magazine+'s theme override for the block entity refernece field for the tabs powered custom block
+ *
+ * @see magazineplus_preprocess_field__field_mt_content_tabs()
+ */
+#}
+{%
+  set classes = [
+    'field',
+    'field--name-' ~ field_name|clean_class,
+    'field--type-' ~ field_type|clean_class,
+    'field--label-' ~ label_display,
+  ]
+%}
+{%
+  set title_classes = [
+    'field__label',
+    label_display == 'visually_hidden' ? 'visually-hidden',
+  ]
+%}
+{{ attach_library('magazineplus/field-mt-pricing-table') }}
+<div{{ attributes.addClass(classes) }}>
+  {% if not label_hidden %}
+    <h3{{ title_attributes.addClass(title_classes) }}>{{ label }}</h3>
+  {% endif %}
+  <div class="row">
+    {% for item in items %}
+      <div class="{{ item.content['#paragraph'].get('field_mt_pt_layout').value }}">
+        <div class="mt-pricing-table">
+          <div class="mt-pricing-table__header">
+            <div class="mt-pricing-table-title">
+              <h5>{{ item.content['#paragraph'].get('field_mt_pt_title').value }}</h5>
+            </div>
+            <div class="mt-pricing-table-price">
+              {{ item.content['#paragraph'].get('field_mt_pt_price').value }}
+            </div>
+            <div class="mt-pricing-table-link">
+              <a target="_blank" class="link--bordered link--dark" href="{{ item.content['#paragraph'].get('field_mt_pt_link').uri }}">
+                {{ item.content['#paragraph'].get('field_mt_pt_link').title }}
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="mt-pricing-table__content">
+          {{ item.content }}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>

@@ -1,0 +1,68 @@
+{% extends "node.html.twig" %}
+{#
+/**
+ * @file
+ * Magazine+'s theme implementation to display a Team member node.
+ */
+#}
+{% block header_top %}
+  {% if content.field_mt_member_photo|render %}
+      {% if page %}
+       {{ attach_library('magazineplus/magnific-popup-field-member-photo-init') }}
+      {% endif %}
+      <div class="photo-container">
+        {{ content.field_mt_member_photo }}
+      </div>
+  {% endif %}
+{% endblock %}
+{% block title_area %}
+  {{ title_prefix }}
+    {% if not page %}
+      <h2{{ title_attributes.addClass('node__title') }}>
+        <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+      </h2>
+    {% else %}
+      <h2{{ title_attributes.addClass('node__title title sr-only') }}>
+        {{ label }}
+      </h2>
+    {% endif %}
+  {{ title_suffix }}
+  {% if content.field_mt_facebook_account|render or content.field_mt_twitter_account|render or content.field_mt_youtube_account|render or content.field_mt_user|render %}
+    <ul class="icons-list">
+      {% if content.field_mt_user|render %}
+        <li>
+          <a class="tooltip--white" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="{% trans %}VIEW USER CONTRIBUTIONS{% endtrans %}" href="{{ path('entity.user.canonical', {'user': node.field_mt_user.target_id}) }}" class="link--dark">
+            <i class="fa fa-user"><span class="sr-only">User Profile</span></i>
+          </a>
+        </li>
+      {% endif %}
+      {% if content.field_mt_facebook_account|render %}
+        <li>
+          <a target="_blank" class="tooltip--white" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="{% trans %}FACEBOOK{% endtrans %}" href="{{ node.field_mt_facebook_account.value }}" class="link--dark">
+            <i class="fa fa-facebook"><span class="sr-only">facebook</span></i>
+          </a>
+        </li>
+      {% endif %}
+      {% if content.field_mt_twitter_account|render %}
+        <li>
+          <a target="_blank" class="tooltip--white" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="{% trans %}TWITTER{% endtrans %}" href="{{ node.field_mt_twitter_account.value }}" class="link--dark">
+            <i class="fa fa-twitter"><span class="sr-only">twitter</span></i>
+          </a>
+        </li>
+      {% endif %}
+      {% if content.field_mt_youtube_account|render %}
+        <li>
+          <a target="_blank" class="tooltip--white" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="{% trans %}YOUTUBE{% endtrans %}" href="{{ node.field_mt_youtube_account.value }}" class="link--dark">
+            <i class="fa fa-youtube"><span class="sr-only">youtube</span></i>
+          </a>
+        </li>
+      {% endif %}
+    </ul>
+  {% endif %}
+{% endblock %}
+{% block content %}
+  {{ attach_library('magazineplus/node-team-member') }}
+  <div class="content">
+    {{ content|without('field_mt_member_photo','field_mt_facebook_account','field_mt_user','field_mt_twitter_account','field_mt_youtube_account') }}
+  </div>
+{% endblock %}

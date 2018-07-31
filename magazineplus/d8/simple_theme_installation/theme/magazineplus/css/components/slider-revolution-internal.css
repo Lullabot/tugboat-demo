@@ -1,0 +1,16 @@
+/**
+ * @file
+ * Visual styles for Magazine+'s slider revolution full-screen.
+ */
+.slideshow-internal .tp-caption__title {
+  color: #ffffff;
+}
+.slideshow-internal .tparrows:before {
+  color: #ffffff;
+}
+.slideshow-internal .tparrows:hover:before {
+  color: #373737;
+}
+.slideshow-internal.one-slide .tp-thumbs {
+  display: none;
+}

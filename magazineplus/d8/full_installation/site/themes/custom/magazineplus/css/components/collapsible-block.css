@@ -1,0 +1,46 @@
+/**
+ * @file
+ * Visual styles for Magazine+'s collapsible block.
+ */
+.container-fluid .field--mt-collapsible-block {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+.collapsible-block__trigger h3 {
+  margin: 0;
+}
+.collapsible-block__trigger a {
+  display: block;
+  padding: 10px;
+  text-align: center;
+  background-color: #373737;
+  color: #ffffff;
+  font-size: 24px;
+  position: relative;
+}
+.collapsible-block__trigger a:hover,
+.collapsible-block__trigger a:focus {
+  background-color: #505050;
+  color: #ffffff;
+}
+.collapsible-block__trigger .collapsible-block-icon {
+  font-size: 14px;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  text-align: center;
+  line-height: 1;
+  margin-top: -7px;
+}
+.collapsible-block__expand-icon {
+  display: none;
+}
+.collapsible-block__collapse-icon {
+  display: inline-block;
+}
+.collapsed .collapsible-block__expand-icon {
+  display: inline-block;
+}
+.collapsed .collapsible-block__collapse-icon {
+  display: none;
+}

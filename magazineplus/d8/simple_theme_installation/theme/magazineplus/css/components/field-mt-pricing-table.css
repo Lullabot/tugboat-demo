@@ -1,0 +1,61 @@
+/**
+ * @file
+ * Visual styles for mt-pricing-table field in Magazine+.
+ */
+.field--name-field-mt-pricing-table {
+  margin: 80px 0 70px;
+}
+.field--name-field-mt-pricing-table > h3.field__label {
+  font-size: 30px;
+  font-weight: 400;
+  margin-bottom: 50px;
+  text-align: center;
+}
+.mt-pricing-table__header {
+  text-align: center;
+  padding: 35px 25px 50px;
+  background-color: #f4f4f4;
+  margin-bottom: 35px;
+}
+.mt-pricing-table-title h5 {
+  font-size: 14px;
+  text-transform: uppercase;
+  padding-bottom: 15px;
+  margin-top: 0;
+  margin-bottom: 20px;
+  border-bottom-color: #dedede;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+}
+.mt-pricing-table-price {
+  font-size: 40px;
+  padding-bottom: 25px;
+}
+.mt-pricing-table-link {
+  font-size: 12px;
+  text-transform: uppercase;
+}
+.field--name-field-mt-pt-feature .field__label {
+  font-size: 14px;
+  text-transform: uppercase;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+  font-weight: 400;
+  border-bottom-color: #eeeeee;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+}
+.field--name-field-mt-pt-feature .field__items .field__item {
+  padding: 0 0 5px 20px;
+  position: relative;
+}
+.field--name-field-mt-pt-feature .field__items .field__item:before {
+  content: "";
+  width: 2px;
+  height: 2px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  margin-top: -3px;
+  background-color: #373737;
+}

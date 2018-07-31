@@ -1,0 +1,22 @@
+uuid: b8f227cf-c090-4fe3-9124-892d4ea6b629
+langcode: en
+status: true
+dependencies:
+  theme:
+    - magazineplus
+_core:
+  default_config_hash: Ok68zlSpUL-Mz10SZmIPxMlF-Kt3yh2qYH6cAH6BLts
+id: magazineplus_local_tasks
+theme: magazineplus
+region: content
+weight: -7
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

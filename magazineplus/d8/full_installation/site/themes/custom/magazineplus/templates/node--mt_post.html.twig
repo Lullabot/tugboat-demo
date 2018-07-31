@@ -1,0 +1,224 @@
+{#
+/**
+ * @file
+ * Magazine+'s theme implementation to display a post node.
+ *
+ * Available variables:
+ * - node: Full node entity.
+ *   - id: The node ID.
+ *   - bundle: The type of the node, for example, "page" or "article".
+ *   - authorid: The user ID of the node author.
+ *   - createdtime: Time the node was published formatted in Unix timestamp.
+ *   - changedtime: Time the node was changed formatted in Unix timestamp.
+ * - label: The title of the node.
+ * - content: All node items. Use {{ content }} to print them all,
+ *   or print a subset such as {{ content.field_example }}. Use
+ *   {{ content|without('field_example') }} to temporarily suppress the printing
+ *   of a given child element.
+ * - author_picture: The node author user entity, rendered using the "compact"
+ *   view mode.
+ * - metadata: Metadata for this node.
+ * - date: Themed creation date field.
+ * - author_name: Themed author name field.
+ * - url: Direct URL of the current node.
+ * - display_submitted: Whether submission information should be displayed.
+ * - attributes: HTML attributes for the containing element.
+ *   The attributes.class element may contain one or more of the following
+ *   classes:
+ *   - node: The current template type (also known as a "theming hook").
+ *   - node--type-[type]: The current node type. For example, if the node is an
+ *     "Article" it would result in "node--type-article". Note that the machine
+ *     name will often be in a short form of the human readable label.
+ *   - node--view-mode-[view_mode]: The View Mode of the node; for example, a
+ *     teaser would result in: "node--view-mode-teaser", and
+ *     full: "node--view-mode-full".
+ *   The following are controlled through the node publishing options.
+ *   - node--promoted: Appears on nodes promoted to the front page.
+ *   - node--sticky: Appears on nodes ordered above other non-sticky nodes in
+ *     teaser listings.
+ *   - node--unpublished: Appears on unpublished nodes visible only to site
+ *     admins.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - content_attributes: Same as attributes, except applied to the main
+ *   content tag that appears in the template.
+ * - author_attributes: Same as attributes, except applied to the author of
+ *   the node tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ * - view_mode: View mode; for example, "teaser" or "full".
+ * - teaser: Flag for the teaser state. Will be true if view_mode is 'teaser'.
+ * - page: Flag for the full page state. Will be true if view_mode is 'full'.
+ * - readmore: Flag for more state. Will be true if the teaser content of the
+ *   node cannot hold the main body content.
+ * - logged_in: Flag for authenticated user status. Will be true when the
+ *   current user is a logged-in member.
+ * - is_admin: Flag for admin user status. Will be true when the current user
+ *   is an administrator.
+ *
+ * @see template_preprocess_node()
+ */
+#}
+
+{% extends "node.html.twig" %}
+{% block node_side %}
+  <div class="node__side">
+    {% if display_submitted or mt_setting.reading_time or mt_setting.share_links or mt_setting.font_resize or mt_setting.post_progress or mt_setting.print_button %}
+      {% if display_submitted %}
+        <div class="node__user-info">
+          {% if author_picture %}
+            <div class="user-picture">
+              <div{{ author_attributes }}>
+                {{ author_picture }}
+              </div>
+            </div>
+          {% endif %}
+          {{ metadata }}
+        </div>
+      {% endif %}
+      {% if mt_setting.reading_time %}
+        {{ attach_library('magazineplus/reading-time') }}
+        <div class="reading-time">
+          {% if minutes < 1 %}
+            {% trans %}
+              1<div class="reading-time__text">min read</div>
+            {% endtrans %}
+          {% else %}
+            {% trans %}
+              {{ minutes }}<div class="reading-time__text">min read</div>
+            {% endtrans %}
+          {% endif %}
+        </div>
+      {% endif %}
+      {% if mt_setting.affix_side %}
+        {{ attach_library('magazineplus/node-side-affix') }}
+        <div id="affix">
+      {% endif %}
+      {% if mt_setting.font_resize %}
+        {{ attach_library('magazineplus/font-resize') }}
+        <div class="content-font-settings">
+            <div class="font-resize">
+              <a href="#" id="decfont">A-</a>
+              <a href="#" id="incfont">A+</a>
+            </div>
+        </div>
+      {% endif %}
+      {% if mt_setting.post_progress %}
+        {{ attach_library('magazineplus/post-progress') }}
+        <div class="post-progress">
+          <div class="post-progress__value"></div>
+          <div class="post-progress__text">{% trans %}read{% endtrans %}</div>
+          <div class="post-progress__bar"></div>
+        </div>
+      {% endif %}
+      {% if mt_setting.share_links_print_position == "node-side" and (mt_setting.share_links or mt_setting.print_button) %}
+        {{ attach_library('magazineplus/share-links') }}
+        <div class="share-links">
+          <ul>
+            {% if mt_setting.share_links %}
+              <li class="facebook{{ (mt_setting.print_button) ? ' print-button-enabled' : '' }}">
+                <a href="https://www.facebook.com/sharer/sharer.php?u={{ url('entity.node.canonical', {'node': node.id}) }}&t={{node.label | url_encode(true)}}" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <i class="fa fa-facebook"><span class="sr-only">facebook</span></i>
+                </a>
+              </li>
+              <li class="twitter{{ (mt_setting.print_button) ? ' print-button-enabled' : '' }}">
+                <a href="http://twitter.com/share?text={{node.label | url_encode(true)}}&url={{ url('entity.node.canonical', {'node': node.id}) }}" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <i class="fa fa-twitter"><span class="sr-only">twitter</span></i>
+                </a>
+              </li>
+              <li class="email{{ (mt_setting.print_button) ? ' print-button-enabled' : '' }}">
+                <a href="mailto:?Subject={{node.label | url_encode(true)}}&amp;Body={{ url('entity.node.canonical', {'node': node.id}) }}">
+                    <i class="fa fa-envelope-o"><span class="sr-only">email</span></i>
+                </a>
+              </li>
+            {% endif %}
+            {% if mt_setting.print_button %}
+              <li class="print{{ (mt_setting.share_links) ? ' share-links-enabled' : '' }}">
+                <div class="print">
+                  <a href="javascript:window.print()" class="print-button">
+                    <i class="fa fa-print"><span class="sr-only">print</span></i>
+                  </a>
+                </div>
+              </li>
+            {% endif %}
+          </ul>
+        </div>
+      {% endif %}
+      {% if mt_setting.affix_side %}
+        </div>
+      {% endif %}
+      {% if mt_setting.share_links_print_position == "bottom" and (mt_setting.share_links or mt_setting.print_button) %}
+        {{ attach_library('magazineplus/share-links') }}
+        {{ attach_library('magazineplus/fixed-share-links') }}
+        <div class="share-links">
+          <ul>
+            {% if mt_setting.share_links %}
+              <li class="facebook{{ (mt_setting.print_button) ? ' print-button-enabled' : '' }}">
+                <a href="https://www.facebook.com/sharer/sharer.php?u={{ url('entity.node.canonical', {'node': node.id}) }}&t={{node.label | url_encode(true)}}" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <i class="fa fa-facebook"><span class="sr-only">facebook</span></i>
+                </a>
+              </li>
+              <li class="twitter{{ (mt_setting.print_button) ? ' print-button-enabled' : '' }}">
+                <a href="http://twitter.com/share?text={{node.label | url_encode(true)}}&url={{ url('entity.node.canonical', {'node': node.id}) }}" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <i class="fa fa-twitter"><span class="sr-only">twitter</span></i>
+                </a>
+              </li>
+              <li class="email{{ (mt_setting.print_button) ? ' print-button-enabled' : '' }}">
+                <a href="mailto:?Subject={{node.label | url_encode(true)}}&amp;Body={{ url('entity.node.canonical', {'node': node.id}) }}">
+                    <i class="fa fa-envelope-o"><span class="sr-only">email</span></i>
+                </a>
+              </li>
+            {% endif %}
+            {% if mt_setting.print_button %}
+              <li class="print{{ (mt_setting.share_links) ? ' share-links-enabled' : '' }}">
+                <div class="print">
+                  <a href="javascript:window.print()" class="print-button">
+                    <i class="fa fa-print"><span class="sr-only">print</span></i>
+                  </a>
+                </div>
+              </li>
+            {% endif %}
+          </ul>
+        </div>
+      {% endif %}
+    {% endif %}
+  </div>
+{% endblock %}
+{% block meta_area %}
+  {% if display_submitted %}
+    <div class="node__user-info">
+      <div class="user-name">{% trans %}<span>by </span> {% endtrans %}{{ author_name }}</div>
+      {{ metadata }}
+    </div>
+  {% endif %}
+  {% if display_submitted or content.field_mt_post_category or content.comment %}
+    <div class="node__meta">
+      <div class="node-info">
+        {% if content.field_mt_post_category %}
+          <div class="node-info-item node-info-item-term">{{content.field_mt_post_category}}</div>
+        {% endif %}
+        {% if display_submitted %}
+          <div class="node-info-item node-info-item-date">{{date}}</div>
+        {% endif %}
+        {% if content.comment %}
+          <div class="node-info-item node-info-item-comments">
+            {% trans %}
+              1 comment
+            {% plural comment_count %}
+              {{ comment_count }} comments
+            {% endtrans %}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  {% endif %}
+{% endblock %}
+{% block content %}
+  {{ attach_library('magazineplus/node-post') }}
+  <div class="node__main-content-section">
+    {{ content|without('links', 'field_mt_post_category', 'comment') }}
+  </div>
+  {{ content.comment }}
+{% endblock %}

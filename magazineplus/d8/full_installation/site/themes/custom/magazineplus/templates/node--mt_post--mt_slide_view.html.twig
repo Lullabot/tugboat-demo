@@ -1,0 +1,18 @@
+{#
+/**
+ * @file
+ * Magazine+'s theme implementation to display a Post node.
+ */
+#}
+{% extends "node.html.twig" %}
+{% block header_top %}
+  {% if content.field_image %}
+    {{ content.field_image }}
+  {% endif %}
+{% endblock %}
+{% block meta_area %}
+{% endblock %}
+{% block content %}
+  {{ attach_library('magazineplus/node-post') }}
+  {{ content|without('field_mt_post_category', 'comment', 'field_image', 'links') }}
+{% endblock %}

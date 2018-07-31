@@ -1,0 +1,19 @@
+/**
+ * @file
+ * Visual styles for Magazine+'s popular tags views.
+ */
+.view-mt-popular-tags .views-row {
+  display: inline-block;
+  margin: 0 7px 10px 0;
+}
+.view-mt-popular-tags .views-row a {
+  display: block;
+  text-decoration: none;
+  padding: 0px 5px 5px 0;
+}
+.region--dark-typography .view-mt-popular-tags .views-row a {
+  color: #373737;
+}
+.view-mt-popular-tags .views-row a:before {
+  content: "#";
+}

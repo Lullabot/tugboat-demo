@@ -1,0 +1,22 @@
+uuid: 5818ddfc-5b37-4dd2-b688-45227d4b11a8
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - magazineplus
+_core:
+  default_config_hash: ChUWAilV6oDjpOkzVDrnAfhz_SZC3w8cG23QNyf81uo
+id: magazineplus_messages
+theme: magazineplus
+region: system_messages
+weight: -6
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,28 @@
+/**
+ * @file
+ * Visual styles for Magazine+'s view archive.
+ */
+.view-archive .item-list ul {
+  list-style: none;
+  padding-left: 0;
+}
+.view-archive .item-list ul li {
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: #eeeeee;
+  margin-bottom: 0;
+  font-size: 16px;
+}
+.view-archive .item-list ul li:last-child {
+  border-bottom-width: 0;
+}
+.region--light-typography .view-archive .item-list ul li {
+  border-bottom-color: rgba(255, 255, 255, 0.2);
+}
+.view-archive .item-list ul li:first-child a {
+  padding-top: 0;
+}
+.view-archive .item-list ul li a {
+  padding: 12px 0;
+  display: inline-block;
+}

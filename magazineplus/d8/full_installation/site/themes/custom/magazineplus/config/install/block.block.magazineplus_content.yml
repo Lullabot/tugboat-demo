@@ -1,0 +1,22 @@
+uuid: 0a28cb2c-d966-453c-bd35-00d6316d202d
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - magazineplus
+_core:
+  default_config_hash: r_q_QXafqMXMY87a4vlNDa0PXg7tXyIq1BShaD5qJB0
+id: magazineplus_content
+theme: magazineplus
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }
