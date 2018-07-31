@@ -13,7 +13,7 @@ services:
 
         # Install prerequisite packages
         apt-get update
-        apt-get install -y mysql-client
+        apt-get install -y mysql-client nano
 
         # Install drush-launcher
         wget -O /usr/local/bin/drush https://github.com/drush-ops/drush-launcher/releases/download/0.6.0/drush.phar
@@ -45,7 +45,7 @@ services:
       # from the base preview.
       build:
         set -x
-        drush -r "${DOCROOT}" cache-rebuild
+        # drush -r "${DOCROOT}" cache-rebuild
 
   # What to call the service hosting MySQL. This name also acts as the
   # hostname to access the service by from the php service.
