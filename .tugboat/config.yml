@@ -25,9 +25,7 @@ services:
         ln -snf "${TUGBOAT_ROOT}/docroot" "${DOCROOT}"
 
         docker-php-ext-install opcache
-        a2enmod headers rewrite
-
-        cp "${TUGBOAT_ROOT}/magazineplus/d8/full_installation/site" "${DOC_ROOT}"
+        a2enmod headers rewrite      
 
         # Create the private files directory.
         mkdir -p $DOCROOT/../files/private
@@ -37,6 +35,8 @@ services:
         chmod -R g+w "${DOCROOT}/sites/default/files" "${DOCROOT}/../files/private"
         chmod 2775 "${DOCROOT}/sites/default/files" "${DOCROOT}/../files/private"
 
+      update:
+        cp "${TUGBOAT_ROOT}/magazineplus/d8/full_installation/site" "${DOC_ROOT}"
       # Commands that build the site. This is where you would add things
       # like feature reverts or any other drush commands required to
       # set up or configure the site. When a preview is built from a
