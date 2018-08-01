@@ -42,6 +42,7 @@ services:
     checkout: true
     
     commands:
-      update:
+      update: | 
+        set -x
         cat "${TUGBOAT_ROOT}/magazineplus/d8/full_installation/database/db_instance.sql" | mysql tugboat
 
