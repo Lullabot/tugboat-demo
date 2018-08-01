@@ -36,7 +36,7 @@ services:
         chmod 2775 "${DOCROOT}/sites/default/files" "${DOCROOT}/../files/private"
 
       update:
-        cp "${TUGBOAT_ROOT}/magazineplus/d8/full_installation/site" "${DOC_ROOT}"
+        cp "${TUGBOAT_ROOT}/magazineplus/d8/full_installation/site" "${DOCROOT}"
       # Commands that build the site. This is where you would add things
       # like feature reverts or any other drush commands required to
       # set up or configure the site. When a preview is built from a
@@ -53,6 +53,7 @@ services:
 
     # Use the latest available 5.x version of MySQL
     image: tugboatqa/mysql:5
+    checkout: true
     
     commands:
       update:
