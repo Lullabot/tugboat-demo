@@ -8,8 +8,7 @@ services:
     commands:
 
       # Commands that set up the basic preview infrastructure
-      init: |
-        set -x
+      init:
 
         # Install prerequisite packages
         apt-get update
@@ -35,9 +34,7 @@ services:
         chmod -R g+w "${DOCROOT}/sites/default/files" "${DOCROOT}/../files/private"
         chmod 2775 "${DOCROOT}/sites/default/files" "${DOCROOT}/../files/private"
 
-      update: |
-        set -x
-        
+      update:        
         cp "${TUGBOAT_ROOT}/magazineplus/d8/full_installation/site" "${DOCROOT}"
       # Commands that build the site. This is where you would add things
       # like feature reverts or any other drush commands required to
@@ -45,9 +42,8 @@ services:
       # base preview, the build workflow starts here, skipping the init
       # and update steps, because the results of those are inherited
       # from the base preview.
-      build: |
-        set -x
-        # drush -r "${DOCROOT}" cache-rebuild
+      build:
+        drush -r "${DOCROOT}" cache-rebuild
 
   # What to call the service hosting MySQL. This name also acts as the
   # hostname to access the service by from the php service.
@@ -58,7 +54,6 @@ services:
     checkout: true
     
     commands:
-      update: |
-        set -x
+      update:
         cat "${TUGBOAT_ROOT}/magazineplus/d8/full_installation/database/db_instance.sql" | mysql -h mysql tugboat
 
