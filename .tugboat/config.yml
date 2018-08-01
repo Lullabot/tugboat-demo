@@ -8,12 +8,11 @@ services:
     commands:
 
       # Commands that set up the basic preview infrastructure
-      init: |
+      init: | 
         set -x
-
         # Install prerequisite packages
         apt-get update
-        apt-get install -y mysql-client
+        apt-get install -y mysql-client nano
 
         # Install drush-launcher
         wget -O /usr/local/bin/drush https://github.com/drush-ops/drush-launcher/releases/download/0.6.0/drush.phar
@@ -24,28 +23,13 @@ services:
         # repository, change that here. This example links /web to the docroot
         ln -snf "${TUGBOAT_ROOT}/docroot" "${DOCROOT}"
 
-        docker-php-ext-install opcache
-        a2enmod headers rewrite
+        #docker-php-ext-install opcache
+        #a2enmod headers rewrite      
 
-        cp "${TUGBOAT_ROOT}/magazineplus/d8/full_installation/site" "${DOC_ROOT}"
-
-        # Create the private files directory.
-        mkdir -p $DOCROOT/../files/private
-
-        # Set up permissions for the files directories.
-        chgrp -R www-data "${DOCROOT}/sites/default/files" "${DOCROOT}/../files/private"
-        chmod -R g+w "${DOCROOT}/sites/default/files" "${DOCROOT}/../files/private"
-        chmod 2775 "${DOCROOT}/sites/default/files" "${DOCROOT}/../files/private"
-
-      # Commands that build the site. This is where you would add things
-      # like feature reverts or any other drush commands required to
-      # set up or configure the site. When a preview is built from a
-      # base preview, the build workflow starts here, skipping the init
-      # and update steps, because the results of those are inherited
-      # from the base preview.
-      build:
-        set -x
-        drush -r "${DOCROOT}" cache-rebuild
+        cp -r "${TUGBOAT_ROOT}/magazineplus/d8/full_installation/site/." "${DOCROOT}"
+        chgrp -R www-data "${DOCROOT}/sites/default/files"
+        chmod -R g+w "${DOCROOT}/sites/default/files"
+        chmod 2775 "${DOCROOT}/sites/default/files"
 
   # What to call the service hosting MySQL. This name also acts as the
   # hostname to access the service by from the php service.
@@ -53,8 +37,10 @@ services:
 
     # Use the latest available 5.x version of MySQL
     image: tugboatqa/mysql:5
+    checkout: true
     
     commands:
-      update:
-        cat "${TUGBOAT_ROOT}/magazineplus/d8/full_installation/database/db_instance.sql" | mysql -h mysql -u tugboat -ptugboat demo
+      update: | 
+        set -x
+        cat "${TUGBOAT_ROOT}/magazineplus/d8/full_installation/database/db_instance.sql" | mysql tugboat
 
