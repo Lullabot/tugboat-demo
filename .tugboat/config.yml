@@ -35,7 +35,9 @@ services:
         chmod -R g+w "${DOCROOT}/sites/default/files" "${DOCROOT}/../files/private"
         chmod 2775 "${DOCROOT}/sites/default/files" "${DOCROOT}/../files/private"
 
-      update:
+      update: |
+        set -x
+        
         cp "${TUGBOAT_ROOT}/magazineplus/d8/full_installation/site" "${DOCROOT}"
       # Commands that build the site. This is where you would add things
       # like feature reverts or any other drush commands required to
@@ -43,7 +45,7 @@ services:
       # base preview, the build workflow starts here, skipping the init
       # and update steps, because the results of those are inherited
       # from the base preview.
-      build:
+      build: |
         set -x
         # drush -r "${DOCROOT}" cache-rebuild
 
@@ -56,6 +58,7 @@ services:
     checkout: true
     
     commands:
-      update:
+      update: |
+        set -x
         cat "${TUGBOAT_ROOT}/magazineplus/d8/full_installation/database/db_instance.sql" | mysql -h mysql tugboat
 
