@@ -8,7 +8,8 @@ services:
     commands:
 
       # Commands that set up the basic preview infrastructure
-      init:
+      init: | 
+        set -x
         # Install prerequisite packages
         apt-get update
         apt-get install -y mysql-client nano
