@@ -26,13 +26,9 @@ services:
         #docker-php-ext-install opcache
         #a2enmod headers rewrite      
 
-        # Create the private files directory.
-        mkdir -p $DOCROOT/../files/private
-
-        # Set up permissions for the files directories.
-        chgrp -R www-data "${DOCROOT}/sites/default/files" "${DOCROOT}/../files/private"
-        chmod -R g+w "${DOCROOT}/sites/default/files" "${DOCROOT}/../files/private"
-        chmod 2775 "${DOCROOT}/sites/default/files" "${DOCROOT}/../files/private"
+        chgrp -R www-data "${DOCROOT}/sites/default/files"
+        find "${DOCROOT}/sites/default/files" -type d -exec chmod 2775 {} \;
+        find "${DOCROOT}/sites/default/files" -type f -exec chmod 0664 {} \;
 
       update:        
         cp "${TUGBOAT_ROOT}/magazineplus/d8/full_installation/site" "${DOCROOT}"
