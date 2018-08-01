@@ -31,6 +31,7 @@ services:
         #find "${DOCROOT}/sites/default/files" -type f -exec chmod 0664 {} \;
 
       update:
+      set -x
         cp "${TUGBOAT_ROOT}/magazineplus/d8/full_installation/site" "${DOCROOT}"
       # Commands that build the site. This is where you would add things
       # like feature reverts or any other drush commands required to
@@ -51,5 +52,6 @@ services:
     
     commands:
       update:
+        set -x
         cat "${TUGBOAT_ROOT}/magazineplus/d8/full_installation/database/db_instance.sql" | mysql -h mysql tugboat
 
