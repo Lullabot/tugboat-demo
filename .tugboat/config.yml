@@ -57,5 +57,5 @@ services:
     
     commands:
       update:
-        cat "${TUGBOAT_ROOT}/magazineplus/d8/full_installation/database/db_instance.sql" | mysql -h mysql -u tugboat -ptugboat demo
+        cat "${TUGBOAT_ROOT}/magazineplus/d8/full_installation/database/db_instance.sql" | mysql -h mysql tugboat
 
