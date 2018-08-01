@@ -31,16 +31,7 @@ services:
         #find "${DOCROOT}/sites/default/files" -type f -exec chmod 0664 {} \;
 
       update:
-        set -x
         cp "${TUGBOAT_ROOT}/magazineplus/d8/full_installation/site" "${DOCROOT}"
-      # Commands that build the site. This is where you would add things
-      # like feature reverts or any other drush commands required to
-      # set up or configure the site. When a preview is built from a
-      # base preview, the build workflow starts here, skipping the init
-      # and update steps, because the results of those are inherited
-      # from the base preview.
-      build:
-        #drush -r "${DOCROOT}" cache-rebuild
 
   # What to call the service hosting MySQL. This name also acts as the
   # hostname to access the service by from the php service.
@@ -52,6 +43,5 @@ services:
     
     commands:
       update:
-        set -x
-        cat "${TUGBOAT_ROOT}/magazineplus/d8/full_installation/database/db_instance.sql" | mysql -h mysql tugboat
+        #cat "${TUGBOAT_ROOT}/magazineplus/d8/full_installation/database/db_instance.sql" | mysql -h mysql tugboat
 
