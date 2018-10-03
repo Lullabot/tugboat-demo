@@ -1,0 +1,45 @@
+services:
+    php:
+        image: tugboatqa/php:7.0-apache
+        default: true
+        depends: mysql
+        commands:
+            init:
+                # Install prerequisite packages
+                - apt-get update
+                - apt-get install -y mysql-client
+
+                # Link the docroot
+                - ln -snf "${TUGBOAT_ROOT}/docroot" "${DOCROOT}"
+
+                # Install Drush
+                - composer --no-ansi global require drush/drush:8.0.5
+                - ln -sf ~/.composer/vendor/bin/drush /usr/local/bin/drush
+
+                # Set up settings.php
+                - cp "${DOCROOT}/sites/default/default.settings.php" "${DOCROOT}/sites/default/settings.php"
+                - cp "${TUGBOAT_ROOT}/.tugboat/tugboat.settings.php" "${DOCROOT}/sites/default/settings.local.php"
+
+            update:
+                # Download & extract files
+                - rm -rf "${DOCROOT}/sites/default/files"
+                - wget -O /tmp/files.zip "https://www.dropbox.com/s/v5zydjej6mzsxs9/files3-5.zip?dl=1&pv=1"
+                - unzip /tmp/files.zip
+                - mv files "${DOCROOT}/sites/default/"
+                - chown -R www-data "${DOCROOT}/sites/default/files"
+                - rm /tmp/files.zip
+
+            build:
+                # Import config & clear cache
+                - drush -r "${DOCROOT}" config-import
+                - drush -r "${DOCROOT}" cr
+
+    mysql:
+        image: tugboatqa/mysql:5
+        commands:
+            update:
+                # Import database
+                - wget -O /tmp/database.sql "https://www.dropbox.com/s/9omeceyujt53s83/tugboat-demo3-5-2.sql?dl=1&pv=1"
+                - mysql -e 'drop database tugboat; create database tugboat;'
+                - cat /tmp/database.sql | mysql tugboat
+                - rm /tmp/database.sql
