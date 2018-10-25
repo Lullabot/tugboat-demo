@@ -31,8 +31,8 @@ services:
 
             build:
                 # Import config & clear cache
-                - drush -r "${DOCROOT}" config-import
-                - drush -r "${DOCROOT}" cr
+                - drush -r "${DOCROOT}" config-import -y
+                - drush -r "${DOCROOT}" cr -y
 
     mysql:
         image: tugboatqa/mysql:5
