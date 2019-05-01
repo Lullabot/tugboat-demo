@@ -34,6 +34,12 @@ services:
                 - drush -r "${DOCROOT}" config-import -y
                 - drush -r "${DOCROOT}" cr -y
 
+        visualdiffs:
+            - /
+            - node/1
+            - node/2
+            - node/3
+
     mysql:
         image: tugboatqa/mysql:5
         commands:
