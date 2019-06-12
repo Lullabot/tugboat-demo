@@ -5,9 +5,9 @@ services:
         depends: mysql
         
         visualdiffs:
-          # Create visualdiffs for the default alias
-          - /
-          - /about
+          :default:
+            - /
+            - /about
         
         commands:
             init:
