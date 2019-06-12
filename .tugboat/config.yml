@@ -33,6 +33,11 @@ services:
                 # Import config & clear cache
                 - drush -r "${DOCROOT}" config-import -y
                 - drush -r "${DOCROOT}" cr -y
+            
+            visualdiffs:
+                  # Create visualdiffs for the default alias
+                  - /
+                  - /about
 
     mysql:
         image: tugboatqa/mysql:5
