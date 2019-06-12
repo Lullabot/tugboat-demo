@@ -3,6 +3,12 @@ services:
         image: tugboatqa/php:7.0-apache
         default: true
         depends: mysql
+        
+        visualdiffs:
+          # Create visualdiffs for the default alias
+          - /
+          - /about
+        
         commands:
             init:
                 # Install prerequisite packages
@@ -33,11 +39,6 @@ services:
                 # Import config & clear cache
                 - drush -r "${DOCROOT}" config-import -y
                 - drush -r "${DOCROOT}" cr -y
-            
-            visualdiffs:
-                  # Create visualdiffs for the default alias
-                  - url: /
-                  - url: /about
 
     mysql:
         image: tugboatqa/mysql:5
