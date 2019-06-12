@@ -36,8 +36,8 @@ services:
             
             visualdiffs:
                   # Create visualdiffs for the default alias
-                  - /
-                  - /about
+                  - url: /
+                  - url: /about
 
     mysql:
         image: tugboatqa/mysql:5
