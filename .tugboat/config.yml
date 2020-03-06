@@ -4,11 +4,6 @@ services:
         default: true
         depends: mysql
         
-        visualdiffs:
-          :default:
-            - /
-            - /about
-        
         commands:
             init:
                 # Install prerequisite packages
@@ -39,6 +34,10 @@ services:
                 # Import config & clear cache
                 - drush -r "${DOCROOT}" config-import -y
                 - drush -r "${DOCROOT}" cr -y
+
+        visualdiffs:
+            - /
+            - /about
 
     mysql:
         image: tugboatqa/mysql:5
