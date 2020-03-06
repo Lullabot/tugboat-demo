@@ -4,7 +4,7 @@ fixed_header: 1
 scrolltop_display: 1
 bootstrap_js_include: 1
 three_columns_grid_layout: grid_3_6_3
-color_scheme: blue
+color_scheme: default
 reading_time: 1
 share_links: 1
 print_button: 1
