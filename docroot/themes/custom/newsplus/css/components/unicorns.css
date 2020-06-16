@@ -1,0 +1,24 @@
+/**
+ * @file
+ * Unicorns!
+ */
+
+.headers-wrapper {
+  background-image: url("../../images/unicorn.svg");
+  background-color: #e62060;
+  background-size: 300px;
+  background-position: 1180px center;
+  background-repeat: no-repeat;
+  border: none;
+}
+
+.headers-wrapper #pre-header,
+.headers-wrapper #header-top,
+.headers-wrapper #header {
+  background: none;
+}
+.onscroll .headers-wrapper #header {
+  background-color: #e62060;
+}
+
+
